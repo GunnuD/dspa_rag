@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile_app",
-    "slug": "mobile_app",
+    "name": "dspa-rag-app",
+    "slug": "dspa-rag-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,6 +16,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.gunnud.dsparag",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -24,17 +25,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "64673648-9366-4e5a-936a-272e2e92c694"
-      }
-    },
-    "updates": {
-      "url": "https://u.expo.dev/64673648-9366-4e5a-936a-272e2e92c694"
-    },
-    "runtimeVersion": {
-      "policy": "appVersion"
     }
   }
 }
