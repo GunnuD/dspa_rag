@@ -28,5 +28,6 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
+          # Fresh initialization with forced creation
           npx eas-cli init --non-interactive --force
           npx eas-cli build --platform android --profile preview --non-interactive
