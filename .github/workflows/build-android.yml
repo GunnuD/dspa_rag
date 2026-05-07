@@ -15,14 +15,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm
-          cache-dependency-path: mobile_app/package-lock.json
 
       - name: ?? Setup EAS
-        uses: expo/expo-github-action@v8
-        with:
-          eas-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
+        run: npm install -g eas-cli
 
       - name: ?? Install dependencies
         working-directory: ./mobile_app
@@ -30,4 +25,6 @@ jobs:
 
       - name: ?? Build APK
         working-directory: ./mobile_app
-        run: npx eas-cli build --platform android --profile preview --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        run: eas build --platform android --profile preview --non-interactive
