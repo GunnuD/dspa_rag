@@ -25,5 +25,7 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Fresh build command with explicit auto-credentials handling
+          # Use local eas-cli and specifically avoid credential generation issues
+          # Since the project is created, we use --no-wait to just trigger the build
+          # The key is to ensure EAS uses its managed credentials
           npx eas-cli build --platform android --profile preview --non-interactive --no-wait
