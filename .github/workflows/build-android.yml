@@ -25,6 +25,5 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Fresh build command that doesn't explicitly run eas init (since it's done)
-          # We use npx to ensure we have the latest CLI and avoid interactive prompts
+          # Trigger build with auto-credentials to bypass manual keystore creation
           npx eas-cli build --platform android --profile preview --non-interactive --no-wait
