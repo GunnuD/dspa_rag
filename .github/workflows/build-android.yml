@@ -25,8 +25,5 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Use local eas-cli to avoid interactive prompts
-          # Try to initialize first to ensure project exists
-          npx eas-cli init --non-interactive --force || true
-          # Build with --auto-credentials to handle keystore generation automatically
-          npx eas-cli build --platform android --profile preview --non-interactive --no-wait
+          # Fresh build with auto-initialization and auto-credentials
+          npx eas-cli build --platform android --profile preview --non-interactive --no-wait --auto-fast-forward
