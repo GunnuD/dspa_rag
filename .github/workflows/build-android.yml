@@ -25,5 +25,5 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Fresh initialization and build with forced project creation
-          npx eas-cli build --platform android --profile preview --non-interactive --no-wait --auto-fast-forward
+          npx eas-cli init --non-interactive --force
+          npx eas-cli build --platform android --profile preview --non-interactive
