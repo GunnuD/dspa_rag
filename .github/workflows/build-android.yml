@@ -25,5 +25,5 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Use local eas-cli to avoid interactive prompts
-          npx eas-cli build --platform android --profile preview --non-interactive --no-wait --clear-cache
+          # Use local eas-cli and auto-generate credentials if missing
+          npx eas-cli build --platform android --profile preview --non-interactive --no-wait
