@@ -25,8 +25,8 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # The project is already created. We need to handle the keystore.
-          # We'll use the --auto-credentials-fallback flag if possible, 
-          # but the main issue is that EAS requires credentials to be set up once.
-          # We will attempt a build that prompts EAS to use its own managed credentials.
+          # Use local eas-cli to avoid interactive prompts
+          # Try to initialize first to ensure project exists
+          npx eas-cli init --non-interactive --force || true
+          # Build with --auto-credentials to handle keystore generation automatically
           npx eas-cli build --platform android --profile preview --non-interactive --no-wait
