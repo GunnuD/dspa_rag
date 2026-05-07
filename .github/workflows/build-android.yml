@@ -1,10 +1,8 @@
-# Trigger build again
 name: Build Android App
 on:
   push:
     branches:
       - main
-      - build-trigger
 
 jobs:
   build:
@@ -32,4 +30,4 @@ jobs:
 
       - name: ?? Build APK
         working-directory: ./mobile_app
-        run: eas build --platform android --profile preview --non-interactive
+        run: npx eas-cli build --platform android --profile preview --non-interactive
