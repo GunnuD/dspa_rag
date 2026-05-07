@@ -28,6 +28,7 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Force create the project if it doesn't exist, then build
-          eas init --non-interactive --force || true
-          eas build --platform android --profile preview --non-interactive
+          # Use a direct login check and forced init
+          npx eas-cli whoami
+          npx eas-cli init --non-interactive --force || true
+          npx eas-cli build --platform android --profile preview --non-interactive
