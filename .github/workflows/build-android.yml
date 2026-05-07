@@ -25,5 +25,7 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Use npx for latest CLI and run build directly with linked project ID
-          npx eas-cli build --platform android --profile preview --non-interactive --no-wait
+          # Use npx for latest CLI
+          # The key is to run 'eas build:configure' locally once to generate credentials
+          # Since we are on GitHub, we try to force a build that triggers managed credentials
+          npx eas-cli build --platform android --profile preview --non-interactive --no-wait --clear-cache
