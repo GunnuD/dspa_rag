@@ -25,5 +25,5 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Trigger build with auto-credentials to bypass manual keystore creation
+          # Use npx for latest CLI and run build directly with linked project ID
           npx eas-cli build --platform android --profile preview --non-interactive --no-wait
