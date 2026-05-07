@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "dspa-rag-app",
-    "slug": "dspa-rag-app",
+    "name": "dspa-rag-app-v2",
+    "slug": "dspa-rag-app-v2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +16,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.gunnud.dsparag",
+      "package": "com.gunnud.dsparagv2",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"

@@ -28,7 +28,5 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Use a direct login check and forced init
-          npx eas-cli whoami
-          npx eas-cli init --non-interactive --force || true
+          npx eas-cli init --non-interactive --force
           npx eas-cli build --platform android --profile preview --non-interactive
