@@ -28,4 +28,5 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          eas build --platform android --profile preview --non-interactive
+          # Try to build, if it fails due to missing project, init and build again
+          eas build --platform android --profile preview --non-interactive || (eas init --non-interactive && eas build --platform android --profile preview --non-interactive)
