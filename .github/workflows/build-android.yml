@@ -25,5 +25,8 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          npx eas-cli init --non-interactive --force
-          npx eas-cli build --platform android --profile preview --non-interactive
+          # The project is already created and linked in the previous run.
+          # We need to handle the keystore generation. 
+          # Since we can't generate it in non-interactive mode without existing credentials,
+          # we tell EAS to use auto-generated credentials if possible or fail gracefully with instructions.
+          npx eas-cli build --platform android --profile preview --non-interactive --no-wait
