@@ -16,9 +16,6 @@ jobs:
         with:
           node-version: 18
 
-      - name: ?? Setup EAS
-        run: npm install -g eas-cli
-
       - name: ?? Install dependencies
         working-directory: ./mobile_app
         run: npm install
@@ -28,6 +25,7 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Fresh initialization with forced creation
+          # Use npx to run eas directly without global install
+          # Force initialization with a unique name to avoid conflicts
           npx eas-cli init --non-interactive --force
           npx eas-cli build --platform android --profile preview --non-interactive
