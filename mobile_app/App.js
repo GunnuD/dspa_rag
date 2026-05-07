@@ -18,7 +18,7 @@ import * as DocumentPicker from 'expo-document-picker';
 import * as FileSystem from 'expo-file-system';
 import { Mic, MicOff, Paperclip, Send, X, FileText, Languages, ThumbsUp, ThumbsDown } from 'lucide-react-native';
 
-const BACKEND_URL = 'http://172.17.135.25:8000'; // Using your local IP
+const BACKEND_URL = 'http://192.168.0.103:8000'; // Using your local IP
 
 const LANGUAGES = [
   { code: 'en-US', name: 'English' },
