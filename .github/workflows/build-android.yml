@@ -25,7 +25,5 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
-          # Use npx to run eas directly without global install
-          # Force initialization with a unique name to avoid conflicts
-          npx eas-cli init --non-interactive --force
-          npx eas-cli build --platform android --profile preview --non-interactive
+          # Fresh initialization and build with forced project creation
+          npx eas-cli build --platform android --profile preview --non-interactive --no-wait --auto-fast-forward
