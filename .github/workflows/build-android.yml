@@ -27,4 +27,5 @@ jobs:
         working-directory: ./mobile_app
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: eas build --platform android --profile preview --non-interactive
+        run: |
+          eas build --platform android --profile preview --non-interactive || (eas init --id 64673648-9366-4e5a-936a-272e2e92c694 --non-interactive && eas build --platform android --profile preview --non-interactive)
