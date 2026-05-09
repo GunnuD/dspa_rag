@@ -15,17 +15,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: npm
+          cache-dependency-path: my-app/package-lock.json
+
+      - name: ?? Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
 
       - name: ?? Install dependencies
-        working-directory: ./mobile_app
+        working-directory: ./my-app
         run: npm install
 
       - name: ?? Build APK
-        working-directory: ./mobile_app
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: |
-          # Use npx for latest CLI
-          # The key is to run 'eas build:configure' locally once to generate credentials
-          # Since we are on GitHub, we try to force a build that triggers managed credentials
-          npx eas-cli build --platform android --profile preview --non-interactive --no-wait --clear-cache
+        working-directory: ./my-app
+        run: eas build --platform android --profile preview --non-interactive
