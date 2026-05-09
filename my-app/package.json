@@ -1,6 +1,6 @@
 {
     "name":  "my-app",
-    "main":  "electron-main.js",
+    "main":  "electron/main.js",
     "version":  "1.0.0",
     "scripts":  {
                     "start":  "expo start",
