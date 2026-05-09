@@ -10,7 +10,7 @@
                     "web":  "expo start --web",
                     "lint":  "expo lint",
                     "electron":  "electron .",
-                    "electron-build":  "expo export:web \u0026\u0026 electron-builder build --windows"
+                    "electron-build":  "npx expo export -p web \u0026\u0026 electron-builder build --windows"
                 },
     "dependencies":  {
                          "@expo/vector-icons":  "^15.0.3",
